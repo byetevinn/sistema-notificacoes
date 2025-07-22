@@ -1,5 +1,6 @@
 import amqp from 'amqplib';
 import { env } from '../config/env';
+import { emitStatusUpdate } from '../ws/socket';
 
 const statusMap = new Map<string, string>();
 
@@ -27,6 +28,9 @@ export async function startConsumer() {
 
     // Salva em memória
     statusMap.set(mensagemId, status);
+
+    // Emite para todos os clientes conectados via WebSocket
+    emitStatusUpdate(mensagemId, status);
 
     // Publica em fila de status
     const payload = JSON.stringify({ mensagemId, status });
