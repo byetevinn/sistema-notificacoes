@@ -1,0 +1,15 @@
+<div>
+  <input
+    type="text"
+    [(ngModel)]="messageContent"
+    placeholder="Digite sua mensagem"
+  />
+  <button (click)="sendNotification()">Enviar Notificação</button>
+</div>
+
+<ul>
+  <li *ngFor="let n of notifications">
+    <strong>{{ n.messageId }}</strong
+    >: {{ n.status }}
+  </li>
+</ul>
