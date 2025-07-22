@@ -1,0 +1,35 @@
+paths:
+  /api/notificar:
+    post:
+      summary: Enviar uma notificação
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conteudoMensagem:
+                  type: string
+              required:
+                - conteudoMensagem
+      responses:
+        '202':
+          description: Mensagem enviada com sucesso
+        '400':
+          description: Conteúdo da mensagem ausente
+
+  /api/notificar/status/{id}:
+    get:
+      summary: Consultar status da mensagem
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Status encontrado
+        '404':
+          description: Mensagem não encontrada
