@@ -2,6 +2,7 @@
   <input
     type="text"
     [(ngModel)]="messageContent"
+    (keyup.enter)="sendNotification()"
     placeholder="Digite sua mensagem"
   />
   <button (click)="sendNotification()">Enviar Notificação</button>
