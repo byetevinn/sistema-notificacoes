@@ -1,4 +1,4 @@
-<div>
+<div class="form">
   <input
     type="text"
     [(ngModel)]="messageContent"
@@ -7,9 +7,17 @@
   <button (click)="sendNotification()">Enviar Notificação</button>
 </div>
 
-<ul>
-  <li *ngFor="let n of notifications">
-    <strong>{{ n.messageId }}</strong
-    >: {{ n.status }}
-  </li>
-</ul>
+<div class="card-container">
+  <div
+    class="card"
+    *ngFor="let n of notifications"
+    [ngClass]="{
+      success: n.status === 'SUCCESS',
+      failure: n.status === 'FAILURE',
+      waiting: n.status === 'WAITING',
+    }"
+  >
+    <p class="message">{{ n.content }}</p>
+    <p class="status">{{ statusLabels[n.status] || n.status }}</p>
+  </div>
+</div>

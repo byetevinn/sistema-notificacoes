@@ -62,7 +62,7 @@ A documentação da API pode ser acessada em:
 ## 🔁 Fluxo da aplicação
 
 1. **POST /api/notificar**  
-   Envia uma nova notificação com `conteudoMensagem`.  
+   Envia uma nova notificação com `contentMessage`.  
    O backend publica na fila e responde imediatamente com status "AGUARDANDO_PROCESSAMENTO".
 
 2. **(internamente)**  
@@ -78,7 +78,7 @@ A documentação da API pode ser acessada em:
 ```bash
 curl -X POST http://localhost:3000/api/notificar \
   -H "Content-Type: application/json" \
-  -d '{"conteudoMensagem": "Olá do Swagger!"}'
+  -d '{"contentMessage": "Olá do Swagger!"}'
 ```
 
 ---
