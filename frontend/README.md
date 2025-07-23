@@ -63,3 +63,9 @@ PROCESSADO COM SUCESSO
 Olá
 FALHA NO PROCESSAMENTO
 ```
+
+---
+
+## 🧑‍💻 Autor
+
+Stevan Padilha

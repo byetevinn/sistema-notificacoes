@@ -81,3 +81,9 @@ Acesse em [http://localhost:4200](http://localhost:4200)
 
 * [README do Backend](./backend/README.md)
 * [README do Frontend](./frontend/README.md)
+
+---
+
+## 🧑‍💻 Autor
+
+Stevan Padilha
