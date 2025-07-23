@@ -9,10 +9,10 @@ paths:
             schema:
               type: object
               properties:
-                conteudoMensagem:
+                contentMessage:
                   type: string
               required:
-                - conteudoMensagem
+                - contentMessage
       responses:
         '202':
           description: Mensagem enviada com sucesso

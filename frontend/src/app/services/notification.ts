@@ -11,7 +11,7 @@ export class NotificationService {
   sendNotification(messageId: string, messageContent: string): Observable<any> {
     return this.http.post(this.apiUrl, {
       messageId,
-      conteudoMensagem: messageContent,
+      contentMessage: messageContent,
     });
   }
 }

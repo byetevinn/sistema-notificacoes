@@ -15,7 +15,7 @@ export function setupWebSocket(server: HttpServer) {
   console.log('[WS] Servidor WebSocket iniciado');
 }
 
-export function emitStatusUpdate(mensagemId: string, status: string) {
+export function emitStatusUpdate(messageId: string, status: string) {
   if (!io) return;
-  io.emit('statusUpdate', { mensagemId, status });
+  io.emit('statusUpdate', { messageId, status });
 }
