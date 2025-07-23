@@ -10,6 +10,6 @@
 <ul>
   <li *ngFor="let n of notifications">
     <strong>{{ n.messageId }}</strong
-    >: {{ n.status }}
+    >: {{ statusLabels[n.status] || n.status }}
   </li>
 </ul>
