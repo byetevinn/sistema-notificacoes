@@ -8,10 +8,9 @@ export class NotificationService {
 
   constructor(private http: HttpClient) {}
 
-  sendNotification(messageId: string, messageContent: string): Observable<any> {
-    return this.http.post(this.apiUrl, {
-      messageId,
-      contentMessage: messageContent,
+  sendNotification(content: string): Observable<{ messageId: string }> {
+    return this.http.post<{ messageId: string }>(this.apiUrl, {
+      contentMessage: content,
     });
   }
 }
